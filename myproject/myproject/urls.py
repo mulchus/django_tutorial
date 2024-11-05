@@ -21,9 +21,12 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+from .api import api
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("ninja_api/", api.urls),
     path('api/', include('myapp.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'myapp',
     'django_extensions',
+    'employees',
 ]
 
 # Аутентификация и авторизация
