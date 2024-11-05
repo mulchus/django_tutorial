@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+import os
 
 from pathlib import Path
 from datetime import timedelta
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'myapp',
+    'django_extensions',
 ]
 
 # Аутентификация и авторизация
@@ -145,3 +147,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+NOTEBOOK_ARGUMENTS = [
+    '--ip', '0.0.0.0',
+    '--port', '8001',
+]
+IPYTHON_KERNEL_DISPLAY_NAME = 'Django Kernel'
+os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
